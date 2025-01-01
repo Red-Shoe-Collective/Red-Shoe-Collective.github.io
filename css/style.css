@@ -24,6 +24,9 @@ html {
 
   body {
     margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 
     header {
       display: flex;
@@ -33,7 +36,6 @@ html {
       left: 0;
       right : 0;
       padding: 0.5em;
-
       @media (prefers-color-scheme: dark) {
         background-color: #222;
       }
@@ -46,27 +48,42 @@ html {
 
       h1 {
         vertical-align: middle;
-        margin: 0;
-        margin-right: auto;
+        margin: auto;
+        @media screen and (min-width: 768px) {
+          margin-left: 1em;
+        }
+        font-size: 1.3em;
       }
     }
 
     footer {
-      position: absolute;
       display: flex;
+      position: sticky;
+      color: #888;
       bottom: 0;
       left: 0;
       right: 0;
       text-align: center;
       font-size: smaller;
       margin: 0.5em;
+      margin-top: auto;
+
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+        margin: 0.2em;
+        margin-top: auto;
+      }
 
       :first-child {
-        margin-right: auto;
+        @media screen and (min-width: 768px) {
+          margin-right: auto;
+        }
       }
 
       :last-child {
-        margin-left: auto;
+        @media screen and (min-width: 768px){
+          margin-left: auto;
+        }
       }
     }
 
